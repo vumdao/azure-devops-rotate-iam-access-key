@@ -24,7 +24,7 @@
 
 ## 🚀 **Solution overview** <a name="Solution-overview"></a>
 
-<img src=images/flow.png width=900>
+<img src=images/flow-chart.png width=900>
 
 - IAM access key is used by Azure DevOps pipeline to manage AWS development resources as well as some production resources, so it should be rotated weekly. And to reduce the impact towards the pipeline jobs, we schedule this operation on Sunday.
 - The operation is orchestrated by AWS stepfunction which is ingested by lambda functions to handle rotating access keys, store the access key in Secret Manager and update the new access key to Azure DevOps service connection (AWS type), finally, send the result status to the slack channel.
